@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects · Anish Sheela</title>
+<meta name="description" content="Things Anish Sheela has built: live apps you can try, and the code behind them.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231f6f5c'/><text x='16' y='23' font-family='sans-serif' font-size='19' font-weight='700' text-anchor='middle' fill='white'>A</text></svg>">
+<style>
+@font-face { font-family: "Archivo"; src: url(fonts/archivo.woff2) format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; }
+
+:root {
+  --bg: #f6f4ef;
+  --card: #fffdf9;
+  --ink: #1c1b19;
+  --muted: #6b675f;
+  --line: #e2ddd2;
+  --accent: #1f6f5c;
+  --accent-soft: #e3efe9;
+  --tag: #efebe3;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141412;
+    --card: #1c1c19;
+    --ink: #ece9e2;
+    --muted: #9a958b;
+    --line: #2e2d29;
+    --accent: #6fcfb0;
+    --accent-soft: #1d2f29;
+    --tag: #262622;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.55 "Archivo", system-ui, sans-serif;
+}
+a { color: inherit; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+
+header { padding: 64px 0 24px; }
+h1 {
+  font-size: clamp(2.4rem, 7vw, 4rem);
+  font-stretch: 112%;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+}
+.lede { max-width: 38em; color: var(--muted); font-size: 1.1rem; margin: 0; }
+.lede a { color: var(--accent); }
+
+nav.jump { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 0; }
+nav.jump a {
+  text-decoration: none; font-size: .9rem; font-weight: 600;
+  padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px;
+}
+nav.jump a:hover { border-color: var(--accent); color: var(--accent); }
+
+section { padding: 40px 0 8px; }
+h2 {
+  font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--muted); margin: 0 0 4px;
+}
+.sub { color: var(--muted); margin: 0 0 20px; font-size: .95rem; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 16px; }
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  padding: 20px; display: flex; flex-direction: column; gap: 10px;
+}
+.card h3 { margin: 0; font-size: 1.2rem; font-stretch: 105%; font-weight: 700; line-height: 1.25; }
+.card p { margin: 0; color: var(--muted); font-size: .95rem; flex: 1; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
+.tags li { font-size: .75rem; background: var(--tag); padding: 2px 8px; border-radius: 6px; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.links a {
+  font-size: .9rem; font-weight: 600; text-decoration: none;
+  padding: 7px 14px; border-radius: 8px; border: 1px solid var(--line);
+}
+.links a:hover { border-color: var(--accent); }
+.links a.go { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.links a.go:hover { filter: brightness(1.08); }
+.note { font-size: .8rem; color: var(--muted); }
+
+ul.compact { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+ul.compact li {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px;
+  padding: 12px 0; border-bottom: 1px solid var(--line);
+}
+ul.compact a { font-weight: 600; text-decoration-color: var(--line); text-underline-offset: 3px; }
+ul.compact a:hover { color: var(--accent); text-decoration-color: currentColor; }
+ul.compact span { color: var(--muted); font-size: .95rem; }
+
+footer { padding: 48px 0 64px; color: var(--muted); font-size: .9rem; }
+footer a { color: var(--accent); }
+
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Projects</h1>
+  <p class="lede">Things I've built and still run, plus the code behind them. Anything with an
+  <strong>Open</strong> button is live and free to try. Everything else is on
+  <a href="https://github.com/anishanilkumar">GitHub</a>.</p>
+  <nav class="jump" aria-label="Sections">
+    <a href="#live">Try it live</a>
+    <a href="#code">Open source</a>
+    <a href="#research">Research</a>
+    <a href="#archive">Older work</a>
+  </nav>
+</header>
+
+<section id="live">
+  <h2>Try it live</h2>
+  <p class="sub">Running on my own server. No sign-up needed.</p>
+  <div class="grid">
+
+    <article class="card">
+      <h3>ApplyQuest</h3>
+      <p>A job-search tracker that turns applying into a game: points, levels and streaks to keep you going through a tough market, plus interview calendars and analytics. The demo signs you in automatically and resets every two days, so feel free to click anything.</p>
+      <ul class="tags"><li>TypeScript</li><li>React</li><li>FastAPI</li><li>PostgreSQL</li></ul>
+      <div class="links">
+        <a class="go" href="https://applyquest-demo.anishsheela.com">Open demo</a>
+        <a href="https://github.com/anishanilkumar/applyquest">Source</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <h3>Abfahrt</h3>
+      <p>Type in a Berlin address to get the weather, a jacket-or-umbrella call, and live departure boards for the nearest stops. It's the public front end to Jarvis, my wall-mounted household display.</p>
+      <ul class="tags"><li>Python</li><li>FastAPI</li><li>BVG</li><li>Open-Meteo</li></ul>
+      <div class="links">
+        <a class="go" href="https://abfahrt.anishsheela.com">Open</a>
+        <a href="https://github.com/anishanilkumar/jarvis">Source</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <h3>Human Nutrition</h3>
+      <p>What's the nutritional value of a human? A German/EU-style food label for your body, in English and German. Just for fun. Everything is calculated in your browser.</p>
+      <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+      <div class="links">
+        <a class="go" href="https://human-nutrition.anishsheela.com">Open</a>
+        <a href="https://github.com/anishanilkumar/human-nutrition">Source</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <h3>Roads: pothole map</h3>
+      <p>Potholes found in dashcam footage by a custom YOLOv8 model, plotted on the route they were driven along. GPS comes from OCR of the burned-in overlay.</p>
+      <ul class="tags"><li>Python</li><li>YOLOv8</li><li>OCR</li><li>Folium</li></ul>
+      <div class="links">
+        <a class="go" href="https://roads.anishsheela.com">Open</a>
+        <a href="https://github.com/anishanilkumar/potholes">Source</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <h3>Drupal Kerala</h3>
+      <p>Site and public expense report for the Drupal + Wikipedia 25th anniversary celebrations in Kerala.</p>
+      <ul class="tags"><li>HTML</li><li>Community</li></ul>
+      <div class="links">
+        <a class="go" href="https://drupalkerala.org">Open</a>
+        <a href="https://github.com/anishanilkumar/drupalkerala">Source</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <h3>OpenResume</h3>
+      <p>A self-hosted copy of the open-source resume builder and parser. Your resume stays in your browser.</p>
+      <ul class="tags"><li>Next.js</li><li>Self-hosted fork</li></ul>
+      <div class="links">
+        <a class="go" href="https://openresume.anishsheela.com">Open</a>
+        <a href="https://github.com/anishanilkumar/open-resume">Source</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="code">
+  <h2>Open source</h2>
+  <p class="sub">Tools and apps that need your own setup or a household login. The code is all public.</p>
+  <div class="grid">
+
+    <article class="card">
+      <h3>Recipie</h3>
+      <p>An offline-first recipe PWA that knows what's in the pantry, so each recipe shows green, yellow or red for whether you can cook it right now. Comes with an MCP connector so Claude can read and save recipes.</p>
+      <ul class="tags"><li>TypeScript</li><li>PWA</li><li>Python</li><li>MCP</li></ul>
+      <div class="links"><a class="go" href="https://github.com/anishanilkumar/recipie">Source</a></div>
+      <span class="note">The live instance is household-only.</span>
+    </article>
+
+    <article class="card">
+      <h3>Jarvis</h3>
+      <p>A wall-mounted household dashboard and voice assistant for a Raspberry Pi and a cheap Android tablet. Never blanks, never lies.</p>
+      <ul class="tags"><li>Python</li><li>Raspberry Pi</li><li>Voice</li></ul>
+      <div class="links"><a class="go" href="https://github.com/anishanilkumar/jarvis">Source</a></div>
+    </article>
+
+    <article class="card">
+      <h3>grocy-mcp</h3>
+      <p>An MCP server for Grocy, so an AI agent can read and manage a household pantry: stock, expiry dates and the shopping list. Uses OAuth 2.1, and any OIDC provider works.</p>
+      <ul class="tags"><li>Python</li><li>MCP</li><li>OAuth</li></ul>
+      <div class="links"><a class="go" href="https://github.com/anishanilkumar/grocy-mcp">Source</a></div>
+    </article>
+
+    <article class="card">
+      <h3>Karyasthan</h3>
+      <p>A WhatsApp bot for a shared flat. Every morning at 8 it announces whose turn it is for the kitchen and the weekly cleaning.</p>
+      <ul class="tags"><li>Node</li><li>WhatsApp</li><li>PostgreSQL</li></ul>
+      <div class="links"><a class="go" href="https://github.com/anishanilkumar/wg_whatsapp">Source</a></div>
+    </article>
+
+    <article class="card">
+      <h3>Qatar Airways alert monitor</h3>
+      <p>Watches the Qatar Airways travel-alerts feed and sends each new alert to Telegram. Runs on GitHub Actions every few minutes.</p>
+      <ul class="tags"><li>Python</li><li>GitHub Actions</li><li>Telegram</li></ul>
+      <div class="links"><a class="go" href="https://github.com/anishanilkumar/qatar-alert-monitor">Source</a></div>
+    </article>
+
+  </div>
+</section>
+
+<section id="research">
+  <h2>Research &amp; coursework</h2>
+  <p class="sub">Media authenticity and computer vision.</p>
+  <ul class="compact">
+    <li><a href="https://github.com/anishanilkumar/content-authenticity-poc">Content Authenticity PoC</a><span>Register images and PDFs with PGP signatures and perceptual hashes, then verify them later, even after re-encoding.</span></li>
+    <li><a href="https://github.com/anishanilkumar/sign_extension">Signature verifier extension</a><span>A Firefox extension that checks digital signatures using perceptual hashing.</span></li>
+    <li><a href="https://github.com/anishanilkumar/potholes">Pothole detection</a><span>The dashcam-to-map pipeline behind Roads.</span></li>
+    <li><a href="https://github.com/anishanilkumar/potholes-midsem">Mid-semester viva</a> · <a href="https://github.com/anishanilkumar/potholes-final">Final viva</a><span>Presentation decks for the pothole project.</span></li>
+    <li><a href="https://github.com/anishanilkumar/vaccination-drive">School vaccination portal</a><span>Full-stack app for running school vaccination drives: student records, scheduling and reports.</span></li>
+    <li><a href="https://github.com/anishanilkumar/library-k8s">Library on Kubernetes</a><span>A library-management frontend and its Kubernetes deployment.</span></li>
+  </ul>
+</section>
+
+<section id="archive">
+  <h2>Older work</h2>
+  <p class="sub">Drupal modules, PHP libraries and early experiments.</p>
+  <ul class="compact">
+    <li><a href="https://github.com/anishanilkumar/hacked">hacked</a><span>The Hacked! module, ported to Drupal 9.</span></li>
+    <li><a href="https://github.com/anishanilkumar/csv_txt_formatter">csv_txt_formatter</a><span>Drupal field formatter that turns CSV into a list.</span></li>
+    <li><a href="https://github.com/anishanilkumar/page_api">page_api</a><span>Drupal JSON API for fetching a page.</span></li>
+    <li><a href="https://github.com/anishanilkumar/block_id">block_id</a><span>Drupal 9 upgrade of block_id.</span></li>
+    <li><a href="https://github.com/anishanilkumar/phpresellerclub">phpresellerclub</a><span>A PHP wrapper around the ResellerClub API.</span></li>
+    <li><a href="https://github.com/anishanilkumar/sgbusrun">sgbusrun</a><span>Should you walk or run for the bus? (Singapore)</span></li>
+    <li><a href="https://github.com/anishanilkumar/splitmyexpense">splitmyexpense</a><span>Data from splitmyexpense.com.</span></li>
+    <li><a href="https://github.com/anishanilkumar/bloodbank">bloodbank</a><span>An online blood donor directory. The first one.</span></li>
+  </ul>
+</section>
+
+<footer>
+  More at <a href="https://anishsheela.com">anishsheela.com</a> and
+  <a href="https://github.com/anishanilkumar">github.com/anishanilkumar</a>.
+  This page is a single static file, served from a NixOS box.
+</footer>
+
+</div>
+</body>
+</html>
